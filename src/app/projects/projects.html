@@ -1,0 +1,50 @@
+<section id="projects" class="container">
+  <h2 class="section-title">Projects</h2>
+
+  @if (repos.isLoading()) {
+    <p class="note">Loading repositories…</p>
+  } @else if (repos.error()) {
+    <p class="note">
+      Couldn't load repositories right now —
+      <a [href]="githubUrl" target="_blank" rel="noopener">see them on GitHub</a>.
+    </p>
+  } @else {
+    <ul class="grid">
+      @for (repo of shown(); track repo.name) {
+        <li class="card">
+          <h3>
+            <a [href]="repo.html_url" target="_blank" rel="noopener">{{ repo.name }}</a>
+          </h3>
+          <p class="desc">{{ repo.description ?? 'No description yet.' }}</p>
+
+          @if (repo.topics.length) {
+            <ul class="chips">
+              @for (topic of repo.topics; track topic) {
+                <li class="chip">{{ topic }}</li>
+              }
+            </ul>
+          }
+
+          <div class="meta">
+            @if (repo.language) {
+              <span class="lang">
+                <span class="swatch" [style.background]="languageColor(repo.language)"></span>
+                {{ repo.language }}
+              </span>
+            }
+            @if (repo.stargazers_count) {
+              <span>★ {{ repo.stargazers_count }}</span>
+            }
+            <span>Updated {{ repo.pushed_at | date: 'MMM y' }}</span>
+            @if (repo.homepage) {
+              <a [href]="repo.homepage" target="_blank" rel="noopener">Live ↗</a>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+    <a class="more" [href]="githubUrl + '?tab=repositories'" target="_blank" rel="noopener">
+      All repositories on GitHub →
+    </a>
+  }
+</section>

@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Rebuild weekly so the repo list picks up new projects and descriptions
+  schedule:
+    - cron: '0 6 * * 1'
 
 permissions:
   contents: read

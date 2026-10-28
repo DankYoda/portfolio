@@ -1,0 +1,37 @@
+<section id="experience" class="container">
+  <h2 class="section-title">Experience</h2>
+
+  <ol class="timeline">
+    @for (job of jobs; track job.company + job.start) {
+      <li class="job">
+        <p class="dates">{{ job.start }} — {{ job.end ?? 'Present' }}</p>
+        <div>
+          <h3>
+            {{ job.role }} ·
+            @if (job.companyUrl) {
+              <a [href]="job.companyUrl" target="_blank" rel="noopener">{{ job.company }}</a>
+            } @else {
+              {{ job.company }}
+            }
+          </h3>
+          @if (job.location) {
+            <p class="location">{{ job.location }}</p>
+          }
+          @if (job.summary) {
+            <p class="summary">{{ job.summary }}</p>
+          }
+          <ul class="highlights">
+            @for (item of job.highlights; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+          <ul class="chips">
+            @for (t of job.tech; track t) {
+              <li class="chip">{{ t }}</li>
+            }
+          </ul>
+        </div>
+      </li>
+    }
+  </ol>
+</section>

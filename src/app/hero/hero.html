@@ -1,0 +1,24 @@
+<section class="hero container">
+  @if (profile.openToWork) {
+    <p class="status"><span class="dot"></span> Open to new opportunities</p>
+  }
+  <h1>{{ profile.name }}</h1>
+  <p class="title">{{ profile.title }}</p>
+  <p class="tagline">{{ profile.tagline }}</p>
+  @if (profile.location) {
+    <p class="location">{{ profile.location }}</p>
+  }
+
+  <div class="actions">
+    @if (profile.email) {
+      <a class="btn primary" [href]="'mailto:' + profile.email">Get in touch</a>
+    }
+    @if (profile.resumeUrl) {
+      <a class="btn" [href]="profile.resumeUrl" target="_blank" rel="noopener">Résumé</a>
+    }
+    <a class="btn" [href]="'https://github.com/' + profile.githubUser" target="_blank" rel="noopener">GitHub</a>
+    @if (profile.linkedin) {
+      <a class="btn" [href]="profile.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    }
+  </div>
+</section>
