@@ -19,7 +19,7 @@ export interface SkillGroup {
 
 export const profile = {
   name: 'Dakota Feist',
-  title: 'Software Developer',
+  title: 'Software Engineering Manager',
   tagline:
     'TODO: one or two sentences about what you build and what you care about. ' +
     'This is the first thing a recruiter reads — make it specific.',
@@ -27,9 +27,9 @@ export const profile = {
   openToWork: true,
 
   githubUser: 'DankYoda',
-  email: '', // shown as a "Contact" button when set
-  linkedin: '', // full URL
-  resumeUrl: '', // full URL, or put a PDF in /public and use 'resume.pdf'
+  email: 'dakotafeist@pm.me', // shown as a "Contact" button when set
+  linkedin: 'https://www.linkedin.com/in/dakota-feist-56a7421b7/', // full URL
+  resumeUrl: 'resume.pdf', // full URL, or put a PDF in /public and use 'resume.pdf'
 
   experience: [
     {
