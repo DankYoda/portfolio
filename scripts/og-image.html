@@ -1,0 +1,42 @@
+<!doctype html>
+<!--
+  Template for public/og-image.png, the picture shown when the site is shared
+  on LinkedIn, Slack, X, iMessage and so on. To regenerate after changing your
+  name or title, open this file in a browser at 1200x630 and screenshot it, or:
+    node -e "require('playwright').chromium.launch().then(async b=>{const p=await b.newPage({viewport:{width:1200,height:630}});await p.goto('file://'+process.cwd()+'/scripts/og-image.html');await p.waitForTimeout(1500);await p.screenshot({path:'public/og-image.png'});await b.close()})"
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; }
+  body {
+    box-sizing: border-box;
+    padding: 96px 104px;
+    display: flex; flex-direction: column; justify-content: center;
+    background:
+      radial-gradient(900px 500px at 100% 0%, rgba(139,140,255,.22), transparent 60%),
+      #0b0b0f;
+    color: #ececf1;
+    font-family: Inter, system-ui, sans-serif;
+  }
+  .status {
+    align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 10px 22px; border: 2px solid #26262e; border-radius: 999px;
+    font-size: 26px; color: #9b9ba7;
+  }
+  .dot { width: 14px; height: 14px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 6px rgba(74,222,128,.25); }
+  h1 { margin: 44px 0 0; font-size: 112px; line-height: 1; letter-spacing: -0.03em; font-weight: 700; }
+  .title { margin: 28px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 40px; color: #8b8cff; }
+  .url { margin-top: auto; font-family: 'JetBrains Mono', monospace; font-size: 26px; color: #9b9ba7; }
+</style>
+</head>
+<body>
+  <span class="status"><span class="dot"></span> Open to new opportunities</span>
+  <h1>Dakota Feist</h1>
+  <p class="title">Software Engineering Manager</p>
+  <p class="url">dankyoda.github.io/portfolio</p>
+</body>
+</html>
