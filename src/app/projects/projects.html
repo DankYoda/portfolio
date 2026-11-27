@@ -1,9 +1,7 @@
 <section id="projects" class="container">
   <h2 class="section-title">Projects</h2>
 
-  @if (repos.isLoading()) {
-    <p class="note">Loading repositories…</p>
-  } @else if (repos.error()) {
+  @if (!shown().length) {
     <p class="note">
       Couldn't load repositories right now —
       <a [href]="githubUrl" target="_blank" rel="noopener">see them on GitHub</a>.

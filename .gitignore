@@ -2,3 +2,4 @@
 /node_modules
 /.angular
 /.idea
+/src/app/projects/repos.generated.json

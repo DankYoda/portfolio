@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "repos": "node scripts/fetch-repos.mjs",
+    "prestart": "npm run repos",
+    "prebuild": "npm run repos",
+    "prewatch": "npm run repos",
+    "pretest": "npm run repos",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
