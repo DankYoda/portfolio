@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Hero } from './hero/hero';
 import { Experience } from './experience/experience';
 import { Projects } from './projects/projects';
@@ -14,4 +15,9 @@ import { profile } from './profile';
 export class App {
   protected readonly profile = profile;
   protected readonly year = new Date().getFullYear();
+
+  constructor() {
+    // Keep the browser tab title in sync with profile.ts
+    inject(Title).setTitle(`${profile.name} · ${profile.title}`);
+  }
 }

@@ -35,7 +35,7 @@ export const profile = {
     {
       role: 'Software Engineering Manager',
       company: 'University of North Dakota IT',
-      companyUrl: 'und.edu',
+      companyUrl: 'https://und.edu',
       location: 'Grand Forks, ND',
       start: 'June 2026',
       summary: 'TODO: one line on the team / product.',
@@ -48,7 +48,7 @@ export const profile = {
     {
       role: 'Software Engineer',
       company: 'University of North Dakota IT',
-      companyUrl: 'und.edu',
+      companyUrl: 'https://und.edu',
       location: 'Grand Forks, ND',
       start: 'Nov 2022',
       end: 'May 2026',
