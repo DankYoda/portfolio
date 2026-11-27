@@ -23,6 +23,12 @@ export const profile = {
   tagline:
     'TODO: one or two sentences about what you build and what you care about. ' +
     'This is the first thing a recruiter reads — make it specific.',
+  // Used for search results and link previews (LinkedIn, Slack, X, iMessage…)
+  description:
+    'Dakota Feist is a software engineering manager at the University of North Dakota. ' +
+    'Projects, experience, and skills.',
+  siteUrl: 'https://dankyoda.github.io/portfolio/', // where the site is deployed, with trailing slash
+  previewImage: 'og-image.png', // 1200x630, in /public (template: scripts/og-image.html)
   location: '', // e.g. 'Denver, CO · Open to remote'
   openToWork: true,
 

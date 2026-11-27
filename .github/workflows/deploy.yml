@@ -30,6 +30,12 @@ jobs:
 
       - run: npm ci
 
+      # Bake the GitHub repo list into the build. Fails the job (so the deploy is skipped and the
+      # current site stays up) if the API errors or returns nothing, e.g. when rate limited.
+      - run: npm run repos
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
       # Repo is served at https://<user>.github.io/portfolio/, so assets need that base path
       - run: npx ng build --base-href /portfolio/
 
